@@ -33,11 +33,15 @@ inline vec3 operator*(const vec3& v, float t)
 }
 inline vec3 operator/(const vec3& v, float t)
 {
-	return (1 / t) * v;
+	return (1.0 / t) * v;
 }
 inline vec3 operator+(const vec3& v, const vec3& u)
 {
 	return vec3{ v[0] + u[0],v[1] + u[1],v[2] + u[2] };
+}
+inline vec3 operator-(const vec3& v, const vec3& u)
+{
+	return vec3{ v[0] - u[0],v[1] - u[1],v[2] - u[2] };
 }
 inline vec3 normalize(const vec3& v)
 {
@@ -51,5 +55,9 @@ inline float dot(const vec3& v, const vec3& u)
 {
 	return v[0] * u[0] + v[1] * u[1] + v[2] * u[2];
 }
-
-
+//constants and functions
+constexpr double pi = 3.1415926535897932385;
+constexpr inline float degrees_to_radians(float degrees)
+{
+	return degrees * pi / 180.0;
+}

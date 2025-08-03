@@ -24,9 +24,10 @@
     <ClCompile Include="ray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\external\stb_image\stb_image_write.h" />
     <ClInclude Include="camera.hpp" />
     <ClInclude Include="ray.hpp" />
-    <ClInclude Include="vec3.hpp" />
+    <ClInclude Include="math.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -114,6 +115,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)external\stb\;%(SolutionDir)/external/stb_image;%(AdditionalIncludeDirectories);$(SolutinDir)external\stb_image</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)external\stb\;;$(SolutinDir)external\stb_image</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

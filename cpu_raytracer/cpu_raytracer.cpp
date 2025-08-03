@@ -1,6 +1,9 @@
 ﻿#include <iostream>
-#include "vec3.hpp"
+#include "camera.hpp"
+
+
 int main()
 {
+   
     
 }

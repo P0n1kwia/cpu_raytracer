@@ -3,20 +3,20 @@
 class vec3
 {
 public:
-	vec3(float x, float y, float z) :x(x), y(y), z(z) {}
-	vec3() : vec3{ 0,0,0 } {}
+	vec3(float x, float y, float z) :xyz{ x,y,z } {}
+	vec3() : xyz{ 0,0,0 } {}
 
 	//operators
-	float operator[](int n) const { if (n == 0) return x; if (n == 1) return y; return z; }
-	float& operator[] (int n){ if (n == 0) return x; if (n == 1) return y; return z; }
-	vec3 operator-() { return vec3{ -x,-y,-z }; }
+	float operator[](int n) const { return xyz[n]; }
+	float& operator[] (int n) { return xyz[n]; }
+	vec3 operator-() { return vec3{ -xyz[0],-xyz[1],-xyz[2]}; }
 
 	//functions
 	float length() const { return std::sqrt(length_squared()); }
-	float length_squared() const { return x * x + y * y + z * z; }
+	float length_squared() const { return xyz[0] * xyz[0] + xyz[1] * xyz[1] + xyz[2] *xyz[2]; }
 
 private:
-	float x, y, z;
+	float xyz[3];
 };
 
 //typedef

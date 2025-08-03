@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <limits>
 class vec3
 {
 public:
@@ -9,7 +10,7 @@ public:
 	//operators
 	float operator[](int n) const { return xyz[n]; }
 	float& operator[] (int n) { return xyz[n]; }
-	vec3 operator-() { return vec3{ -xyz[0],-xyz[1],-xyz[2]}; }
+	vec3 operator-() const { return vec3{ -xyz[0],-xyz[1],-xyz[2]}; }
 
 	//functions
 	float length() const { return std::sqrt(length_squared()); }
@@ -19,7 +20,7 @@ private:
 	float xyz[3];
 };
 
-//typedef
+//typedefs
 typedef vec3 point3;
 
 //inline functions
@@ -55,9 +56,14 @@ inline float dot(const vec3& v, const vec3& u)
 {
 	return v[0] * u[0] + v[1] * u[1] + v[2] * u[2];
 }
+
 //constants and functions
-constexpr double pi = 3.1415926535897932385;
-constexpr inline float degrees_to_radians(float degrees)
+constexpr inline double pi = 3.1415926535897932385;
+constexpr inline float infinity = std::numeric_limits<float>::infinity();
+constexpr inline float epsilon = std::numeric_limits<float>::epsilon();
+
+template<typename T>
+constexpr inline T degrees_to_radians(T degrees) 
 {
-	return degrees * pi / 180.0;
+	return degrees * static_cast<T>(pi) / static_cast<T>(180.0);
 }

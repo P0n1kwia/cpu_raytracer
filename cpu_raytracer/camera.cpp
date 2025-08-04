@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <iostream>
 
-void camera::render()
+void camera::render(const world& w)
 {
 	init();
 	frame_buffer.resize(image_height * image_width * 3);
@@ -15,7 +15,7 @@ void camera::render()
 		for (int i = 0; i < image_width;i++)
 		{
 			ray curr_ray = get_ray(i, j);
-			vec3 color = pixel_color(curr_ray);
+			vec3 color = pixel_color(curr_ray,w);
 
 
 			//preprocess data : gamma correction, clamp, writing to buffer;
@@ -80,7 +80,7 @@ void camera::save_to_png(const char* name) const
 	}
 }
 
-vec3 camera::pixel_color(const ray& r) const
+vec3 camera::pixel_color(const ray& r, const world& w) const
 {
 	vec3 unit_direction = normalize(r.direction());
 	float t = 0.5f * (unit_direction[1] + 1.0f);  

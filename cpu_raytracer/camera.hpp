@@ -1,11 +1,12 @@
 #pragma once
 #include "ray.hpp"
 #include <vector>
+class world;
 class camera
 {
 public:
 	 camera() {}
-	 void render();
+	 void render(const world& w);
 	 void save_to_png(const char* name) const;
 	//we will be able to set settings by accessing public members
 	int image_width = 100;
@@ -18,8 +19,7 @@ private:
 
 	void init();
 	ray get_ray(int x, int y) const;
-	
-	vec3 pixel_color(const ray& r) const;
+	vec3 pixel_color(const ray& r, const world& w) const;
 	float focal_length = 1.0;
 	int image_height;
 	vec3 u, v, w;//camera basis

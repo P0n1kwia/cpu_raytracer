@@ -47,5 +47,8 @@
     <ClInclude Include="triangle.hpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="world.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

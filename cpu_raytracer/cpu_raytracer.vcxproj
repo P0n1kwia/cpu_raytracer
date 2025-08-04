@@ -31,6 +31,7 @@
     <ClInclude Include="ray.hpp" />
     <ClInclude Include="math.hpp" />
     <ClInclude Include="triangle.hpp" />
+    <ClInclude Include="world.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

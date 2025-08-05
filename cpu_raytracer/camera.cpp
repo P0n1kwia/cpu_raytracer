@@ -3,7 +3,7 @@
 #include "camera.hpp"
 #include <algorithm>
 #include <iostream>
-
+#include "world.hpp"
 void camera::render(const world& w)
 {
 	init();
@@ -73,15 +73,22 @@ ray camera::get_ray(int x, int y) const
 
 void camera::save_to_png(const char* name) const
 {
-	stbi_flip_vertically_on_write(true);
+	//stbi_flip_vertically_on_write(true);
 	if (!stbi_write_png(name, image_width, image_height, 3, frame_buffer.data(), image_width * 3))
 	{
 		std::cerr << "Could not save image to file!\n";
+		std::cout << "hit something" << "\n";
 	}
 }
 
-vec3 camera::pixel_color(const ray& r, const world& w) const
+vec3 camera::pixel_color(const ray& r, const world& scene) const
 {
+	hit_info hi;
+	if (scene.hit(r, 0.001, infinity, hi))
+	{
+		return 0.5 * (hi.normal + vec3{ 1,1,1 });
+
+	}
 	vec3 unit_direction = normalize(r.direction());
 	float t = 0.5f * (unit_direction[1] + 1.0f);  
 

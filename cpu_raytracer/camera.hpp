@@ -19,7 +19,7 @@ private:
 
 	void init();
 	ray get_ray(int x, int y) const;
-	vec3 pixel_color(const ray& r, const world& w) const;
+	vec3 pixel_color(const ray& r, const world& scene) const;
 	float focal_length = 1.0;
 	int image_height;
 	vec3 u, v, w;//camera basis

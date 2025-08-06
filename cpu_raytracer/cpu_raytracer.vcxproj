@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="cpu_raytracer.cpp" />
+    <ClCompile Include="mesh_loader.cpp" />
     <ClCompile Include="ray.cpp" />
     <ClCompile Include="triangle.cpp" />
   </ItemGroup>
@@ -28,6 +29,7 @@
     <ClInclude Include="..\external\stb_image\stb_image_write.h" />
     <ClInclude Include="camera.hpp" />
     <ClInclude Include="geometry.hpp" />
+    <ClInclude Include="mesh_loader.hpp" />
     <ClInclude Include="ray.hpp" />
     <ClInclude Include="math.hpp" />
     <ClInclude Include="triangle.hpp" />

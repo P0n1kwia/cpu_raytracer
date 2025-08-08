@@ -27,7 +27,10 @@
     <ClCompile Include="triangle.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="mesh_loader.cpp">
+    <ClCompile Include="model.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="tiny_obj_loader.cc">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,7 +56,7 @@
     <ClInclude Include="world.hpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="mesh_loader.hpp">
+    <ClInclude Include="model.hpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

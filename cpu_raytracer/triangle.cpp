@@ -27,9 +27,5 @@ bool triangle::hit(const ray& r, float t_min, float t_max, hit_info& record) con
 
 	record.w = 1 - record.u - record.v;
 	record.set_normal(r.direction(), normalize(normal));
-	
 	return true;
-    
-
-
 }
